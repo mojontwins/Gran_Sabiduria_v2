@@ -23,18 +23,18 @@ Tengo sábado y domingo para hacer esto. Hoy viernes no creo que pueda hacer nad
 
 Hitos:
 
-1.- Coger la paleta de "nes" de Aseprite y añadirla como alternativa en mkts.
-2.- Me voy a atrever y voy a permitir cinco enemigos por pantalla, pero me cuidaré de parametrizarlo. Tengo que crear un enems.ene de prueba para una pantalla al menos con cinco enemigos (bueno, 4 + el tipo 10 de porculear).
-3.- Rellenar con placeholders los gráficos que falten.
-4.- compile.bat
-5.- Mostrar mapa.
-6.- Movimiento cheril.
-7.- Con disparos.
-8.- Enemigos tipo 7 y 10
-9.- Colisiones
-10.- Barra de energía y flor
-11.- Cerrar la pantalla y desbloquearla
-12.- Musas
+1. Coger la paleta de "nes" de Aseprite y añadirla como alternativa en mkts.
+2. Me voy a atrever y voy a permitir cinco enemigos por pantalla, pero me cuidaré de parametrizarlo. Tengo que crear un enems.ene de prueba para una pantalla al menos con cinco enemigos (bueno, 4 + el tipo 10 de porculear).
+3. Rellenar con placeholders los gráficos que falten.
+4. compile.bat
+5. Mostrar mapa.
+6. Movimiento cheril.
+7. Con disparos.
+8. Enemigos tipo 7 y 10
+9. Colisiones
+10. Barra de energía y flor
+11. Cerrar la pantalla y desbloquearla
+12. Musas
 ...
 
 
@@ -128,13 +128,13 @@ Monono tiene tiles empujables mierder de los de toda la vida. No sé muy bien co
 
 Esto mola porque 
 
-1.- Me libera un tile en el tileset con el que jugar para el juego #2. 
-2.- Los bloques que se empujan se moverán al pixel.
-3.- Empujarlos contra una pared harán que se vayan al lado contrario.
+1. Me libera un tile en el tileset con el que jugar para el juego #2. 
+2. Los bloques que se empujan se moverán al pixel.
+3. Empujarlos contra una pared harán que se vayan al lado contrario.
 
 No mola porque
 
-4.- Hay que gestionar las colisiones con ellos. Laterales incluso.
+4. Hay que gestionar las colisiones con ellos. Laterales incluso.
 
 Creo que esto debería funcionar así:
 
@@ -1978,10 +1978,10 @@ Dejo estas ideas macerar tranquilamente. Me gustaría dejar pulido el Lala Lah y
 
 Otra cosa que debería ser viable es invertir Lala Lah con otro tileset para tener PPPP. Habría que:
 
-1.- Añadir código al interpretar los enemigos desde la ROM (y1/y2 = 11 - y1/y2).
-2.- Añadir un modo de juego de gravedad y saltos inversos.
-3.- Añadir código al interpretar hotspots desde la ROM (y = 11 - y).
-4.- Añadir código al detectar cerrojos (y = 11 - y).
+1. Añadir código al interpretar los enemigos desde la ROM (y1/y2 = 11 - y1/y2).
+2. Añadir un modo de juego de gravedad y saltos inversos.
+3. Añadir código al interpretar hotspots desde la ROM (y = 11 - y).
+4. Añadir código al detectar cerrojos (y = 11 - y).
 
 Podría ser XD Ahí lo dejo. Cuando Lah esté al 100% me lo planteo. Ahora tengo que corregir un poco el mapa.
 
@@ -2910,7 +2910,7 @@ Castaña, vaya tela. Lo vi. Voy a solucionarlo. Nunca aprendo. Cuidado con las r
     rdmx = ADD_SIGN (rds, BULLETS_VE);
     rds = pry + 32 < eny [enit] ? -1 : (pry > eny [enit] + 32 ? 1 : 0);
     rdmy = ADD_SIGN (rds, BULLETS_VE);
-    ```
+```
 
 ¡Y listo!
 
