@@ -1,0 +1,26 @@
+ASEPRITE
+MAPFILE ..\dev\assets\tiledata3.h
+
+PALS napiapalts.png
+OPEN napiafont.png
+CHARSET 0, 0, 32, 2
+
+# Patterns for Viaje al Centro de la Napia
+
+OPEN napiats.png
+LABEL ts_napia
+MAPPED 0, 0, 2, 2, 8, 4
+
+# Logo etc
+
+# Don't include definitions for...
+MAPFILE ..\dev\work\tiledata3-ignore.h
+
+OPEN napiahud.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN napiatitle.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN napiaextra.png
+CHARSET 0, 0, 16, 2

@@ -1,0 +1,13 @@
+# Simple test case to check loops.
+
+IDLE 8
+:HERE
+IDLE 4
+LEFT 4
+FIRE PLAYER
+IDLE 1
+RIGHT 4
+IDLE 4
+FIRE PLAYER
+IDLE 1
+RETURN HERE

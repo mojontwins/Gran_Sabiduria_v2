@@ -1,0 +1,19 @@
+# Place this enemy behind the middle tile of a 3 characters barrier
+# Here:
+#   o
+#  XXX
+
+:BACK
+IDLE 6
+RIGHT 2
+IDLE 1
+FIRE PLAYER
+IDLE 1
+FIRE PLAYER
+LEFT 4
+IDLE 1
+FIRE PLAYER
+IDLE 1
+FIRE PLAYER
+RIGHT 2
+RETURN BACK

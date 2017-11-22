@@ -1,0 +1,30 @@
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS palss.png
+OPEN bits.png
+CHARSET 0, 0, 7, 1
+
+# Spriteset
+OPEN ss.png
+LABEL hand
+METASPRITESET 0, 0, 2, 2, 1, 1, 0, 0
+
+# Trabajo Basura
+ASEPRITE
+OPEN tbss.png
+# OPEN tbssradas.png
+PALS tbpalss.png
+LABEL sspl_tb
+METASPRITESET 0, 0, 2, 3, 5, 1, -4, -8 FLIPPED
+LABEL ssen_tb
+METASPRITESET 0, 3, 2, 3, 7, 1, 0, -8
+LABEL ssit_tb
+METASPRITESET 0, 6, 2, 2, 6, 1, 0, 0
+
+LABEL ssti_tb
+OPEN tbtitlespr.png
+#OPEN tbtitlesprradas.png
+SKIPEMPTY
+METASPRITESET 0, 0, 8, 8, 2, 1, 0, 0

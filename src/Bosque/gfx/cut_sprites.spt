@@ -1,0 +1,44 @@
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS palssb.png
+OPEN bits.png
+CHARSET 0, 0, 3, 1
+
+# Metasprites
+OPEN ssb-cheril.png
+LABEL sspl_cheril
+METASPRITESET 0, 0, 2, 3, 5, 5, -4, -8, 22
+
+OPEN ssit.png
+LABEL ssit
+METASPRITESET 0, 0, 2, 2, 3, 1, 0, 0
+
+OPEN ssb-enems.png
+LABEL ssen
+METASPRITESET 0, 0, 2, 2, 8, 1, 0, 0 FLIPPED
+
+OPEN ssb-ninjajar.png
+LABEL sspl_ninjajar
+METASPRITESET 0, 0, 2, 3, 5, 5, -4, -8, 22
+
+# Beberita
+PALS palssb4.png
+
+OPEN ssb-begins.png
+LABEL sspl_cheril_baby
+METASPRITESET 0, 0, 2, 3, 5, 5, -4, -8, 22
+
+OPEN ssit2.png
+LABEL ssit3
+METASPRITESET 0, 0, 2, 2, 3, 1, 0, 0
+
+OPEN ssb-enems3.png
+LABEL ssen3
+METASPRITESET 0, 0, 2, 2, 8, 1, 0, 0 FLIPPED
+
+OPEN ssb-dress.png
+LABEL ssdress
+SKIPEMPTY
+METASPRITE 0, 0, 5, 6, 0, 0

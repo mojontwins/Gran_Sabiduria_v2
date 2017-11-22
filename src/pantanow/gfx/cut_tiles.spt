@@ -1,0 +1,40 @@
+ASEPRITE
+
+MAPFILE ..\dev\work\dum1.h
+
+PALS palts_pantanow.png
+
+LABEL ts_titles
+OPEN title0.png
+MAPPED 0, 0, 2, 2, 9, 7
+
+MAPFILE ..\dev\assets\tiledata.h
+
+LABEL ts_pantanow
+OPEN ts_pantanow.png
+PALS palts_pantanow.png
+# TILESROW2X2 0, 0, 8, 2
+MAPPED 0, 0, 2, 2, 8, 2 DEINTERLACED
+
+LABEL ts_desiertow
+OPEN ts_desiertow.png
+PALS palts_desiertow.png
+# TILESROW2X2 0, 0, 8, 2
+MAPPED 0, 0, 2, 2, 8, 2 DEINTERLACED
+
+LABEL ts_azoteaw
+OPEN ts_azoteaw.png
+PALS palts_azoteaw.png
+# TILESROW2X2 0, 0, 8, 2
+MAPPED 0, 0, 2, 2, 8, 2 DEINTERLACED
+
+PALS palts_pantanow.png
+
+LABEL texts1
+MAPFILE ..\dev\assets\texts.h
+OPEN texts.png
+TEXTS 0, 0, 23, 17
+
+MAPFILE ..\dev\work\cumdumpster.h
+OPEN endingbits.png
+MAPPED 0, 0, 2, 2, 2, 2

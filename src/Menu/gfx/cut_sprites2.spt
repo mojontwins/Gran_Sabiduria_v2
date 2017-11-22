@@ -1,0 +1,21 @@
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata2.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS palss.png
+OPEN bits.png
+CHARSET 0, 0, 7, 1
+
+# Vesta Vaal
+ASEPRITE
+ALLBG
+OPEN vvss.png
+PALS vvpalss.png
+LABEL sspl_vv
+METASPRITESET 0, 0, 2, 3, 6, 3, -4, -8 FLIPPED
+LABEL ssen_vv
+METASPRITESET 0, 11, 2, 3, 6, 1, 0, -8 FLIPPED
+LABEL ssen2_vv
+METASPRITESET 12, 11, 2, 3, 2, 1, 0, 0
+LABEL ssit_tb
+METASPRITESET 0, 9, 2, 2, 3, 1, 0, 0 FLIPPED

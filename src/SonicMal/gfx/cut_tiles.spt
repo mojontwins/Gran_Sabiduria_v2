@@ -1,0 +1,45 @@
+ASEPRITE
+MAPFILE ..\dev\assets\tiledata.h
+
+OPEN all_font.png
+PALS son_paltstitle.png
+CHARSET 0, 0, 32, 2
+
+# Patterns for Sonic Mal
+
+OPEN all_ts0.png
+PALS son_palts0.png
+LABEL ts0
+MAPPED 0, 0, 2, 2, 16, 1
+
+OPEN all_ts1.png
+PALS son_palts1.png
+LABEL ts1
+MAPPED 0, 0, 2, 2, 16, 1
+
+OPEN all_ts2.png
+PALS son_palts0.png
+LABEL ts2
+MAPPED 0, 0, 2, 2, 16, 2, 21
+
+# OPEN all_ts3.png
+# PALS son_palts3.png
+# LABEL ts3
+# MAPPED 0, 0, 2, 2, 16, 2, 23
+
+MAPFILE ..\dev\work\dummydata.h
+
+OPEN son_title.png
+PALS son_paltstitle.png
+LABEL dumdum1
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN esp_title.png
+PALS son_paltstitle.png
+LABEL dumdum2
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN son_ending.png
+PALS son_palts0.png
+LABEL dumdum3
+MAPPED 0, 0, 2, 2, 16, 15

@@ -1,0 +1,23 @@
+MAPFILE ..\dev\assets\tiledata.h
+
+OPEN font.png
+PALS palts.png
+CHARSET 0, 0, 32, 2
+
+# Logo
+LABEL tslogo
+OPEN logo.png
+PALS palts.png
+MAPPED 0, 0, 2, 2, 12, 2
+
+# Trabajo Basura
+ASEPRITE
+OPEN tbts.png
+PALS tbpalts.png
+LABEL ts0
+MAPPED 0, 0, 2, 2, 8, 4
+
+MAPFILE ..\dev\work\tiledata0.h
+OPEN tbending.png
+LABEL tbending
+MAPPED 0, 0, 2, 2, 8, 4

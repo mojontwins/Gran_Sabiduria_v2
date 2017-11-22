@@ -1,0 +1,68 @@
+ASEPRITE
+
+MAPFILE ..\dev\work\dum2.h
+
+PALS palts_pantanow.png
+
+LABEL ts_titles
+OPEN fulltit_comandow.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+MAPFILE ..\dev\assets\tiledata2.h
+
+OPEN ts_comandow.png
+
+LABEL ts_comandow1
+PALS palts_comandow1.png
+# TILESROW2X2 0, 0, 8, 2
+MAPPED 0, 0, 2, 2, 8, 2 DEINTERLACED
+
+LABEL ts_comandow2
+PALS palts_comandow2.png
+# TILESROW2X2 0, 4, 8, 2
+MAPPED 0, 4, 2, 2, 8, 2 DEINTERLACED
+
+LABEL ts_comandow3
+PALS palts_comandow3.png
+# TILESROW2X2 0, 8, 8, 2
+MAPPED 0, 8, 2, 2, 8, 2 DEINTERLACED
+
+PALS palts_pantanow.png
+
+OPEN digits.png
+CHARSET 0, 0, 10, 1
+
+LABEL texts2
+MAPFILE ..\dev\assets\texts2.h
+OPEN texts.png
+TEXTS 0, 0, 23, 17
+
+MAPFILE ..\dev\work\cumdumpster.h
+OPEN endingbits.png
+MAPPED 0, 0, 2, 2, 2, 2
+
+# Training day (in another PRG ROM)
+
+NORMAL
+
+MAPFILE ..\..\shtd\dev\assets\texts.h
+LABEL texts
+OPEN ..\..\shtd\gfx\td_texts.png
+PALS ..\..\shtd\gfx\td_palts0.png
+TEXTS 0, 0, 31, 15
+
+MAPFILE ..\..\shtd\dev\assets\tiledata.h
+LABEL ts0
+OPEN ..\..\shtd\gfx\td_ts0.png
+MAPPED 0, 0, 2, 2, 16, 2
+
+LABEL ts2
+OPEN ..\..\shtd\gfx\td_ts2.png
+PALS ..\..\shtd\gfx\td_palts2.png
+MAPPED 0, 0, 2, 2, 16, 2
+
+MAPFILE ..\..\shtd\dev\work\dummy.h
+PALS ..\..\shtd\gfx\td_palts0.png
+LABEL dummy0
+OPEN ..\..\shtd\gfx\td_framegfx.png
+MAPPED 0, 0, 2, 2, 16, 15

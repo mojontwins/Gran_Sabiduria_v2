@@ -1,0 +1,14 @@
+# To place at the left side. Walks right firing, disappears in diagonal \
+
+IDLE 4
+RIGHT 2
+FIRE PLAYER
+RIGHT 1
+FIRE PLAYER
+RIGHT 1
+FIRE PLAYER
+RIGHT 1
+FIRE PLAYER
+RIGHT 1
+IDLE 1
+UP LEFT 7

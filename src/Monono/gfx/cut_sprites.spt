@@ -1,0 +1,40 @@
+MAPFILE ..\dev\assets\spritedata.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS palss0.png
+OPEN bits.png
+CHARSET 0, 0, 6, 1
+
+# Metasprites
+OPEN ss.png
+
+# Patterns for Monono
+PALS palss0.png
+LABEL sspl0
+METASPRITESET 0, 0, 2, 3, 8, 1, -4, -8 FLIPPED
+LABEL ssen0
+METASPRITESET 0, 6, 2, 3, 6, 1, 0, -8 FLIPPED
+LABEL ssplat0
+METASPRITESET 12, 6, 2, 1, 1, 1, 0, 0
+LABEL ssit0
+METASPRITESET 0, 12, 2, 2, 3, 1, 0, 0
+LABEL ssenextra0
+METASPRITESET 8, 12, 2, 2, 4, 1, 0, 0
+
+# Patterns for Jet Puri Prologue
+PALS palss1.png
+LABEL sspl1
+METASPRITESET 0, 3, 2, 3, 8, 1, -4, -8 FLIPPED
+LABEL ssen1
+METASPRITESET 0, 9, 2, 3, 6, 1, 0, -8 FLIPPED
+LABEL ssplat1
+METASPRITESET 12, 9, 2, 1, 1, 1, 0, 0
+LABEL ssit1
+METASPRITESET 0, 14, 2, 2, 3, 1, 0, 0
+
+# Patterns for Monona
+PALS palss2.png
+LABEL sspl2
+METASPRITESET 0, 16, 2, 3, 8, 1, -4, -8 FLIPPED
+LABEL ssit2
+METASPRITESET 0, 19, 2, 2, 3, 1, 0, 0

@@ -1,0 +1,35 @@
+ASEPRITE
+MAPFILE ..\dev\assets\tiledata2.h
+
+PALS paltsmeghan.png
+OPEN font_meghan.png
+CHARSET 0, 0, 32, 2
+
+OPEN hud_numbers_meghan.png
+CHARSET 0, 0, 10, 1
+
+# Tiles for Mega Meghan
+
+OPEN tsmeghan.png
+PALS paltsmeghan.png
+LABEL ts2
+MAPPED 0, 0, 2, 2, 16, 2, 25
+
+# So tiledata is not included...
+MAPFILE ..\dev\work\tiledata2_trash.h
+
+OPEN hudmeghan.png
+LABEL hudmeghandummy
+MAPPED 0, 0, 2, 2, 16, 2
+
+OPEN meghan_title.png
+LABEL titlemeghandummy
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN meghan_ending_bg.png
+LABEL endingmeghandummy
+MAPPED 0, 0, 2, 2, 4, 8
+
+OPEN meghan_qr.png
+LABEL qrmeghandummy
+MAPPED 0, 0, 2, 2, 16, 15

@@ -1,0 +1,29 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS palss.png
+OPEN bits.png
+CHARSET 0, 0, 14, 1
+
+# LAM BAO
+PALS palss.png
+OPEN ssplayer.png
+LABEL sspl
+METASPRITESET 0, 0, 2, 3, 6, 5, -4, -8
+
+# MALAS
+PALS palss.png
+OPEN ssenems.png
+LABEL ssena
+METASPRITESET 0, 0, 2, 3, 8, 2, -4, -8 FLIPPED
+LABEL ssenb
+METASPRITESET 0, 6, 2, 2, 7, 1, 0, 0
+
+# TITLES
+PALS palss.png
+OPEN sstitle_pantanow.png
+LABEL sstitle_pantanow
+SKIPEMPTY
+METASPRITESET 0, 0, 10, 8, 1, 2, 0, 0

@@ -1,0 +1,15 @@
+MAPFILE ..\dev\work\tiledata2.h
+
+OPEN font.png
+PALS palts0.png
+CHARSET 0, 0, 32, 2
+
+OPEN PuriPose.png
+PALS paltspose.png
+LABEL ts_puri_ending
+MAPPED 0, 0, 2, 2, 4, 8
+
+PALS paltsmononatitle.png
+OPEN monona-ending.png
+LABEL ts_monona_ending
+MAPPED 0, 0, 2, 2, 5, 8

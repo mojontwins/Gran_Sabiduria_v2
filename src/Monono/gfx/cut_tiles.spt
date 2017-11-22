@@ -1,0 +1,37 @@
+OPEN font.png
+PALS palts0.png
+CHARSET 0, 0, 32, 2
+
+# Patterns for Monono
+
+MAPFILE ..\dev\assets\tiledata0.h
+OPEN ts.png
+PALS palts0.png
+LABEL ts0
+MAPPED 0, 0, 2, 2, 16, 1
+
+MAPFILE ..\dev\work\poo0.h
+OPEN logos.png
+LABEL logo0
+MAPPED 0, 0, 2, 2, 16, 4
+
+# Patterns for Jet Puri Prologue
+
+MAPFILE ..\dev\assets\tiledata1.h
+OPEN ts.png
+PALS palts1.png
+LABEL ts1
+MAPPED 0, 2, 2, 2, 16, 1
+
+MAPFILE ..\dev\work\poo1.h
+OPEN logos.png
+LABEL logo1
+MAPPED 0, 8, 2, 2, 16, 5
+
+# Patterns for Monona
+
+MAPFILE ..\dev\assets\tiledata4.h
+OPEN ts.png
+PALS palts2.png
+LABEL ts4
+MAPPED 0, 4, 2, 2, 16, 1

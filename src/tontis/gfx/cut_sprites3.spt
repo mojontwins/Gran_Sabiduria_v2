@@ -1,0 +1,31 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata3.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS potipotipalss.png
+OPEN bits.png
+CHARSET 0, 0, 6, 1
+
+# Metasprites for Viaje al Centro de la Napia
+OPEN napiass.png
+PALS napiapalss.png
+LABEL sspl_napia
+METASPRITESET 0, 0, 2, 3, 9, 1, -4, -8 FLIPPED
+LABEL ssen_napia
+METASPRITESET 0, 3, 2, 2, 6, 1, 0, 0 FLIPPED
+LABEL ssmp_napia
+METASPRITESET 12, 3, 2, 2, 2, 1, 0, 0
+LABEL ssit_napia
+METASPRITESET 0, 5, 2, 2, 5, 1, 0, 0
+LABEL ssrb_napia
+METASPRITESET 0, 7, 2, 3, 9, 1, -4, -8 FLIPPED
+
+SKIPEMPTY
+OPEN napiatitlesprite.png
+LABEL ssti_napia
+METASPRITESET 0, 0, 8, 12, 2, 1, 0, 0
+
+OPEN napiaendingsprite.png
+LABEL sste_napia
+METASPRITESET 0, 0, 16, 8, 1, 2, 0, 0

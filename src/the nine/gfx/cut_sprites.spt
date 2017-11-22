@@ -1,0 +1,34 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata.h
+PALS paleta-sprites.png
+
+# Bits: 0 empty, 1 coco / bullet
+OPEN bullet.png
+CHARSET 0, 0, 2, 1
+
+OPEN ssb-cheril.png
+LABEL spr_pl
+METASPRITESET 0, 0, 2, 3, 6, 5, -4, -8, 26
+
+OPEN ssb-enems.png
+LABEL spr_en1
+METASPRITESET 0, 0, 2, 2, 8, 2, 0, 0, 12 FLIPPED
+LABEL spr_en2
+METASPRITESET 0, 4, 2, 2, 3, 1, 0, 0
+LABEL spr_en3
+METASPRITESET 0, 6, 2, 3, 2, 1, 0, -8 FLIPPED
+LABEL spr_en4
+METASPRITESET 4, 6, 2, 3, 5, 1, 0, -8
+
+OPEN items.png
+LABEL spr_it
+METASPRITESET 0, 0, 2, 2, 3, 1, 0, 0
+
+OPEN hostage.png
+LABEL spr_hos
+METASPRITESET 0, 0, 2, 3, 4, 1, 0, -8
+
+OPEN ending_fg.png
+LABEL spr_ending
+METASPRITESET 0, 0, 2, 3, 4, 1, -4, -8

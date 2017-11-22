@@ -1,0 +1,9 @@
+OPEN font.png
+PALS palts0.png
+CHARSET 0, 0, 32, 2
+
+OPEN monona-title.png
+PALS paltsmononatitle.png
+MAPFILE ..\dev\work\tiledata2.h
+LABEL ts_monona_title
+MAPPED 0, 0, 2, 2, 16, 15

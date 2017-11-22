@@ -1,0 +1,399 @@
+// MT MK2 NES v0.1
+// Copyleft 2016 by The Mojon Twins
+
+// This version was so heavily modified to support 4 completely different games
+// so I've undone the #ifdefs and removed the "CUSTOM" markers.
+// This player.h version won't be easily useable in different projects.
+// Look for the clean version (and a newer one!)
+
+// Player movement & stuff
+
+void player_reset_movement (void) {
+	pvx = pvy = 0;
+	pfixct = pfiring = 0;
+	phit = 0;
+	pvylast = 0;
+	pthrust = 0;
+}
+
+void player_process_block (signed char x, signed char y) {
+	if (y) y --;
+	rdc = x + (y << 4);
+	rda = scr_buff [rdc];
+	switch (rda) {
+		case 14:
+			// push block
+			rdct = x;
+			if (pad0 & PAD_LEFT) {
+				if (x > 0) if (0 == scr_buff [x - 1 + (y << 4)]) rdct = x - 1;
+			} else if (pad0 & PAD_RIGHT) {
+				if (x < 15) if (0 == scr_buff [x + 1 + (y << 4)]) rdct = x + 1;
+			}
+			if (rdct != x) {
+				set_map_tile (x, y, 0); set_map_tile (rdct, y, 14);
+				sfx_play (SFX_BUTT_HIT, SC_LEVEL);
+			}
+			break;
+		case 15:
+			// Key hole
+			if (pkeys) {
+				pkeys --;
+				bolts_clear_bolt ();
+				set_map_tile (x, y, 0);
+				sfx_play (SFX_CHOF, SC_LEVEL);
+			}
+			break;
+	}
+}
+
+void player_init (void) {
+	// Init player data
+
+	//px = (signed int) (PLAYER_INI_X << 4) << FIX_BITS;
+	//py = (signed int) (PLAYER_INI_Y << 4) << FIX_BITS;
+	
+	// Remember: those are Y MAP COORDINATES PLUS ONE!
+	switch (level) {
+		case GAME_MONONO:
+		case GAME_MONONA:
+			px = (signed int) (2 << 4) << FIX_BITS;
+			py = (signed int) (11 << 4) << FIX_BITS;
+			break;
+		case GAME_JET_PURI:
+			px = (signed int) (2 << 4) << FIX_BITS;
+			py = (signed int) (5 << 4) << FIX_BITS;
+			break;
+		case GAME_LAH:
+		case GAME_PPPP:
+			px = (signed int) (12 << 4) << FIX_BITS;
+			py = (signed int) (9 << 4) << FIX_BITS;
+			break;
+	}
+	
+	pfacing = CELL_FACING_RIGHT;
+	player_reset_movement ();
+	pkilled = 0;
+}
+
+void player_hit (void) {
+	phit = PLAYER_HIT_FRAMES;
+	pflickering = PLAYER_FLICKERS;
+	
+	sfx_play (SFX_ENEMY_HIT, SC_PLAYER);
+	
+	if (plife) {
+		plife --;
+	} else pkilled = 1;
+}
+
+void player_move (void) {
+	// Player state
+	if (phit) phit --;
+	if (pflickering) pflickering --;
+
+	evil_tile_hit = 0;
+	pcx = px; pcy = py;
+
+	// ********
+	// Vertical
+	// ********
+
+	// Gravity
+	if (!pgotten && !pthrust) {
+		if (inverted_screen) {
+			if (pvy > -PLAYER_VY_FALLING_MAX) pvy -= PLAYER_G; else pvy = -PLAYER_VY_FALLING_MAX;
+		} else {
+			if (!game_jet_puri || half_life) {
+				if (pvy < PLAYER_VY_FALLING_MAX) pvy += PLAYER_G; else pvy = PLAYER_VY_FALLING_MAX;
+			}
+		}
+	}
+
+	// Move
+	py += pvy;
+
+	// Collision
+	//prx = px >> FIX_BITS;
+	if (py < 0) { py = pry = 0; }
+	else if (py > (192<<FIX_BITS)) pry = 192;
+	else pry = py >> FIX_BITS;
+
+	cx1 = prx >> 4;
+	cx2 = (prx + 7) >> 4;
+	if (pvy + pgtmy) {
+
+		if (pvy + pgtmy < 0) {
+			cy1 = cy2 = pry >> 4;
+			cm_two_points ();
+			if (
+				(inverted_screen && ((at1 & 12) || (at2 & 12))) || 
+				(!inverted_screen && ((at1 & 8) || (at2 & 8)))
+			) {
+				pgotten = pvy = 0;
+				pry = (cy1 + 1) << 4;
+				py = pry << FIX_BITS;
+			}
+			/*
+			if (game_jet_puri) {
+				if ((at1 & 1) || (at2 & 1)) {
+					pvy = PLAYER_V_REBOUND_MULTI; evil_tile_hit = 1;
+				}
+			}
+			*/
+		} else if (pvy + pgtmy > 0)	{
+			cy1 = cy2 = (pry + 15) >> 4; 
+			cm_two_points (); 
+	 		if (
+	 			(inverted_screen && ((at1 & 8) || (at2 & 8))) || 
+	 			(!inverted_screen && (((pry - 1) & 15) < 4 && ((at1 & 12) || (at2 & 12))))
+	 		) {
+				pgotten = pvy = 0;
+				pry = (cy1 - 1) << 4;
+				py = pry << FIX_BITS;
+			}
+			/*
+			if (game_jet_puri) {
+				if ((at1 & 1) || (at2 & 1)) {
+					pvy = -PLAYER_V_REBOUND_MULTI; evil_tile_hit = 1;
+				}
+			}
+			*/
+		}
+	}
+
+	// Floor detections: possee and possibly more in the future.
+
+	if (inverted_screen) {
+		cy1 = cy2 = (pry - 1) >> 4;
+	} else {
+		cy1 = cy2 = (pry + 16) >> 4;
+	}
+	cm_two_points ();
+	ppossee = ((at1 & 14) || (at2 & 14));
+
+	// Evil tile
+
+	if (!game_jet_puri) {	
+		if (inverted_screen) {
+			cy1 = cy2 = (pry + 2) >> 4;		// Let it bleed a bit
+		} else {
+			cy1 = cy2 = (pry + 12) >> 4;	// Let it bleed a bit
+		}
+		cm_two_points ();
+		if (at1 == 1 || at2 == 1) evil_tile_hit = 1;
+	}		
+
+	// Vertical behaviours depends on game being played:
+
+	switch (level) {	
+		case GAME_MONONO:
+		case GAME_MONONA:
+			if (!(pad0 & PAD_A)) { pj = 0; pvylast = -PLAYER_VY_JUMP_INITIAL_MONONO; } else {
+				if (ppossee || pgotten) {
+					pvy = SATURATE_N (pvylast - PLAYER_AY_JUMP_MONONO, -PLAYER_VY_JUMP_MAX_MONONO);
+					pvylast = pvy;
+					pj = 1;
+					sfx_play (SFX_JUMP, SC_PLAYER);
+				}
+			}
+			break;
+
+		case GAME_JET_PURI:
+			if (pad0 & PAD_A) {
+				pvy = SATURATE_N (pvy - PLATER_AY_JETPAC, -PLAYER_VY_JETPAC_MAX);		
+				pthrust = 1;
+				if (!(thrustct)) fumettos_add ();
+				thrustct ++; if (thrustct == 7) thrustct = 0; // so it stays out of phase
+			} else {
+				pthrust = 0;
+				thrustct = 0;
+			}
+			break;
+
+		case GAME_LAH:
+			if (pad0 & PAD_A) {
+				if (!pjb) {
+					pjb = 1;
+					if (!pj) {
+						if (pgotten || ppossee || phit) {
+							pj = 1; pctj = 0; 
+							pvy = -PLAYER_VY_JUMP_INITIAL;
+							sfx_play (SFX_JUMP, SC_PLAYER);
+						}
+					} 
+				}
+				if (pj) {
+					rda = PLAYER_AY_JUMP - (pctj >> 2) - (pctj >> 3);
+					pvy -= (rda > 1 ? rda : 1);
+					if (pvy < -PLAYER_VY_JUMP_MAX) pvy = -PLAYER_VY_JUMP_MAX;
+					pctj ++; if (pctj == PLAYER_VY_JUMP_A_STEPS) pj = 0;
+				}
+			} else pj = pjb = 0;
+			break;
+
+		case GAME_PPPP:
+			// Jump downwards!
+			if (pad0 & PAD_A) {
+				if (!pjb) {
+					pjb = 1;
+					if (!pj) {
+						if (pgotten || ppossee || phit) {
+							pj = 1; pctj = 0; 
+							pvy = PLAYER_VY_JUMP_INITIAL;
+							sfx_play (SFX_JUMP, SC_PLAYER);
+						}
+					} 
+				}
+				if (pj) {
+					rda = PLAYER_AY_JUMP - (pctj >> 2) - (pctj >> 3);
+					pvy += (rda > 1 ? rda : 1);
+					if (pvy > PLAYER_VY_JUMP_MAX) pvy = PLAYER_VY_JUMP_MAX;
+					pctj ++; if (pctj == PLAYER_VY_JUMP_A_STEPS) pj = 0;
+				}
+			} else pj = pjb = 0;
+			break;
+	}							
+
+	// **********
+	// Horizontal
+	// **********
+	
+	// Poll pad
+	if (pad0 & PAD_LEFT) {
+		if (!pfixct) if (pvx > -PLAYER_VX_MAX) {
+			pvx -= PLAYER_AX;			
+		}
+		pfacing = CELL_FACING_LEFT;
+	} else if (pad0 & PAD_RIGHT) {
+		if (!pfixct) if (pvx < PLAYER_VX_MAX) {
+			pvx += PLAYER_AX;
+		}
+		pfacing = CELL_FACING_RIGHT;
+	} else {
+		if (pvx > 0) {
+			pvx -= PLAYER_RX; if (pvx < 0) pvx = 0;
+		} else if (pvx < 0) {
+			pvx += PLAYER_RX; if (pvx > 0) pvx = 0;
+		}
+	}
+
+	// Move
+	px += pvx;		
+	if (pgotten) px += pgtmx;
+	
+	// Collision
+	if (px < (4<<FIX_BITS)) prx = 4;
+	else if (px > (244<<FIX_BITS)) prx = 244;
+	else prx = px >> FIX_BITS;
+
+	cy1 = pry >> 4;
+	cy2 = (pry + 15) >> 4;
+	if (pvx + pgtmx) {
+		if (pvx + pgtmx < 0) {
+			cx1 = cx2 = prx >> 4;
+			cm_two_points ();
+			if ((at1 & 8) || (at2 & 8)) {
+				pvx = 0;
+				prx = (cx1 + 1) << 4;
+				px = prx << FIX_BITS;
+			}
+			/*
+			if (game_jet_puri) {
+				if ((at1 & 1) || (at2 & 1)) {
+					pvx = PLAYER_V_REBOUND_MULTI; evil_tile_hit = 1;
+				}
+			}
+			*/
+		} else if (pvx + pgtmx > 0)	{
+			cx1 = cx2 = (prx + 7) >> 4; 
+			cm_two_points (); 
+	 		if ((at1 & 8) || (at2 & 8)) {
+				pvx = 0;
+				prx = ((cx1 - 1) << 4) + 8;
+				px = prx << FIX_BITS;
+			}
+			/*
+			if (game_jet_puri) {
+				if ((at1 & 1) || (at2 & 1)) {
+					pvx = -PLAYER_V_REBOUND_MULTI; evil_tile_hit = 1;
+				}
+			}
+			*/
+		}
+		if (at1 == 10) player_process_block (cx1, cy1);
+		if (at2 == 10) player_process_block (cx2, cy2);
+	}
+
+	// Evil tile (continued)
+
+	if (game_jet_puri) {
+		cx1 = cx2 = (prx + 4) >> 4;
+		cy1 = pry >> 4;
+		cy2 = (pry + 8) >> 4;
+		cm_two_points ();
+		evil_tile_hit = (at1 | at2) & 1;
+	}
+
+	if (evil_tile_hit) {
+		switch (level) {
+			case GAME_MONONO:
+			case GAME_MONONA:
+			case GAME_LAH:
+				pvy = -PLAYER_V_REBOUND; 
+				break;
+			case GAME_PPPP:
+				pvy = PLAYER_V_REBOUND;
+				break;
+			case GAME_JET_PURI:
+				if (ABS(pvx) > ABS(pvy)) {
+					if (pvx > 0) pvx = -(PLAYER_V_REBOUND>>1); else pvx = (PLAYER_V_REBOUND>>1);
+				} else {
+					if (pvy > 0) pvy = -(PLAYER_V_REBOUND>>1); else pvy = (PLAYER_V_REBOUND>>1);
+				}
+				break;
+		}
+
+		px = pcx; py = pcy;
+		if (!pflickering) player_hit ();
+	}
+
+	// Sprite cell selection is usually pretty custom...
+
+	if (game_jet_puri) {
+		if (ppossee || pgotten) {
+			if (ABS (pvx) > PLAYER_VX_MIN) {
+				psprid = CELL_WALK_BASE + ((prx >> 4) & 3);
+			} else psprid = CELL_IDLE;
+		} else if (pthrust) {
+			psprid = CELL_ASCENDING;
+		} else if (pvy >= PLAYER_VY_MIN) {
+			psprid = CELL_DESCENDING;
+		} else {
+			psprid = CELL_AIRBORNE;
+		}	
+	} else {
+		if (phit) {
+			psprid = CELL_HIT;
+		} else if (ppossee || pgotten) {
+			if (ABS (pvx) > PLAYER_VX_MIN) {
+				psprid = CELL_WALK_BASE + ((prx >> 4) & 3);
+			} else psprid = CELL_IDLE;
+		} else if (pvy < 0) {
+			psprid = CELL_ASCENDING;
+		} else if (pvy >= PLAYER_VY_MIN) {
+			psprid = CELL_DESCENDING;
+		} else if (pvy >= 0) {
+			psprid = CELL_IDLE;
+		}
+	}								
+
+	psprid += pfacing + pcharacter;
+}
+
+void player_render (void) {
+	if (!pflickering || half_life) {
+		oam_meta_spr (prx, pry + SPRITE_ADJUST, 4, spr_player [psprid]);	
+	} else {
+		oam_meta_spr (prx, pry + SPRITE_ADJUST, 4, sprplempty);
+	}
+}

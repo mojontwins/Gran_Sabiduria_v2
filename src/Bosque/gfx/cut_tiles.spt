@@ -1,0 +1,33 @@
+MAPFILE ..\dev\assets\tiledata.h
+
+OPEN font.png
+PALS paltsb.png
+CHARSET 0, 0, 32, 2
+
+MAPFILE ..\dev\work\dummy1.h
+
+OPEN ending.png
+PALS paltsending.png
+LABEL ending
+MAPPED 0, 0, 2, 2, 8, 4
+
+MAPFILE ..\dev\assets\tiledata.h
+
+# Patterns for Cheril of the Bosque
+
+OPEN tsb.png
+PALS paltsb.png
+LABEL ts0
+MAPPED 0, 0, 2, 2, 16, 2, 17
+
+MAPFILE ..\dev\work\dummy2.h
+
+OPEN title.png
+PALS paltstitle.png
+LABEL logo
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN title3.png
+PALS paltstitle.png
+LABEL logo3
+MAPPED 0, 0, 2, 2, 16, 15

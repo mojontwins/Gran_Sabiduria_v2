@@ -1,0 +1,67 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS son_palss.png
+OPEN all_bits.png
+CHARSET 0, 0, 4, 1
+
+# Metasprites
+OPEN son_ss.png
+
+# Sonic Mal
+LABEL sspla0
+METASPRITESET 0, 0, 2, 3, 4, 1, -4, -8 FLIPPED
+LABEL ssplb0
+METASPRITESET 8, 0, 2, 3, 3, 1, -4, 0
+LABEL ssen0
+METASPRITESET 0, 3, 2, 2, 8, 1, 0, 0 FLIPPED
+LABEL ssenextra
+METASPRITESET 8, 5, 2, 3, 2, 1, 0, 0 FLIPPED
+LABEL ssentronquit
+METASPRITESET 12, 7, 2, 2, 2, 1, 0, 0
+LABEL ssencatacrock
+METASPRITESET 10, 9, 2, 2, 3, 1, 0, 0
+LABEL ssenfanty
+METASPRITESET 12, 5, 2, 2, 2, 1, 0, 0 FLIPPED
+LABEL ssit0
+METASPRITESET 0, 5, 2, 2, 3, 1, 0, 0
+LABEL ssit0b
+METASPRITESET 8, 14, 2, 2, 1, 1, 0, 0
+LABEL ssextra
+METASPRITESET 6, 5, 2, 2, 1, 1, 0, 0
+LABEL sstitle0
+METASPRITESET 0, 7, 2, 3, 3, 1, 0, 0
+
+LABEL ssending
+METASPRITESET 0, 10, 2, 3, 5, 1, -4, -8
+
+# Somari
+LABEL sspla2
+METASPRITESET 0, 13, 2, 3, 4, 1, -4, -8 FLIPPED
+
+# Rotating ring for the extended sonic
+LABEL ssring
+METASPRITESET 10, 14, 2, 2, 3, 1, 0, 0
+
+# Carthe
+LABEL sscarthe
+METASPRITESET 14, 12, 2, 2, 1, 1, 0, 0
+
+# Emmerald
+LABEL ssemerald
+METASPRITESET 12, 12, 2, 2, 1, 1, 0, 0
+
+# Espinete tiene poca cosa
+OPEN esp_ss.png
+LABEL sspla1
+METASPRITESET 0, 0, 2, 3, 4, 1, -4, -8 FLIPPED
+LABEL sstitle1
+METASPRITESET 0, 3, 2, 3, 3, 1, 0, 0
+
+# Big sprite to end Somari
+OPEN mar_ss_ending.png
+SKIPEMPTY
+LABEL ssendingsomari
+METASPRITE 0, 0, 8, 8, 0, 0

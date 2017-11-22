@@ -1,0 +1,28 @@
+ASEPRITE
+MAPFILE ..\dev\assets\tiledata.h
+PALS paleta-tiles.png
+
+OPEN fuente.png
+CHARSET 0, 0, 32, 2
+
+OPEN hud_numbers.png
+CHARSET 0, 0, 10, 1
+
+OPEN tiles.png
+LABEL ts0
+MAPPED 0, 0, 2, 2, 16, 3
+
+# So tiledata is not included...
+MAPFILE ..\dev\work\tiledata_trash.h
+
+OPEN hud.png
+LABEL hud
+MAPPED 0, 0, 2, 2, 16, 2
+
+OPEN logo.png
+LABEL logo
+MAPPED 0, 0, 2, 2, 8, 8
+
+OPEN ending_bg.png
+LABEL ending_bg
+MAPPED 0, 0, 2, 2, 14, 8

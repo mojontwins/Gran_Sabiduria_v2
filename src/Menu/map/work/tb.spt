@@ -1,0 +1,37 @@
+; Trabajo Basura simple script.
+
+; Hub screen
+; Entering the hub screen we must draw the mainframe.
+; Pressing ACTION in the hub screen we must trigger the
+; "enter disk" logics.
+
+ENTERING SCREEN 2, 7, 12, 17 
+	IF TRUE
+	THEN
+		SET TILE (7, 7) = 20
+		SET TILE (7, 8) = 21
+	END
+END
+
+PRESS_FIRE AT SCREEN 2, 7, 12, 17
+	IF PLAYER_IN_X 92, 127
+	IF PLAYER_IN_Y 92, 128
+	IF PLAYER_HAS_OBJECTS
+	THEN
+		INC FLAG 1, 1
+		DEC OBJECTS 1
+		SOUND 7
+	END
+END
+
+; Office screen
+; Entering the office screen we must check if
+; game ending conditions have been fullfilled:
+
+ENTERING SCREEN 15
+	IF ENEMIES_KILLED_EQUALS 25
+	IF FLAG 1 = 15
+	THEN
+		WIN GAME
+	END IF
+END

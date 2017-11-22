@@ -1,0 +1,47 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS potipotipalss.png
+OPEN bits.png
+CHARSET 0, 0, 3, 1
+
+# Metasprites for potipoti
+OPEN potipoti.png
+LABEL sspl_potipoti
+METASPRITESET 0, 0, 2, 3, 3, 1, -4, -8 FLIPPED
+
+LABEL ssen_potipoti_a
+METASPRITESET 6, 0, 2, 3, 2, 1, 0, -8 FLIPPED
+
+LABEL ssen_potipoti_b
+METASPRITESET 10, 0, 2, 2, 2, 1, 0, 0 FLIPPED
+
+LABEL ssen_potipoti_c
+METASPRITESET 14, 0, 2, 2, 1, 1, 0, 0
+
+LABEL ssit_potipoti
+METASPRITESET 8, 7, 2, 2, 1, 1, 0, 0
+
+# Metasprites for rendezvous
+OPEN rendezvous.png
+PALS rendezpalss.png
+LABEL sspl_rendezvous
+METASPRITESET 0, 0, 2, 3, 7, 2, -4, -8 FLIPPED
+
+LABEL ssen_rendezvous_a
+METASPRITESET 0, 16, 2, 3, 6, 1, 0, -8 FLIPPED
+
+LABEL ssen_rendezvous_b
+METASPRITESET 0, 19, 2, 2, 2, 1, 0, 0 
+
+LABEL ssen_rendezvous_c
+METASPRITESET 4, 19, 2, 1, 2, 1, 0, 0 
+
+OPEN rendezending.png
+PALS rendezpalss.png
+LABEL spr_ending RESET
+SKIPEMPTY
+METASPRITE 0, 0, 4, 8, 0, 0
+METASPRITE 4, 0, 5, 8, 5, 0

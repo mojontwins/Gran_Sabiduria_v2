@@ -1,0 +1,34 @@
+PALS palsslah.png
+OPEN bitslah.png
+CHARSET 0, 0, 3, 1
+
+MAPFILE ..\dev\assets\spritedata_lah.h
+
+PALS palssppppending.png
+OPEN ssppppending.png
+LABEL ssending_pppp
+SKIPEMPTY
+METASPRITE 0, 0, 7, 12, 0, 0
+
+NOSKIPEMPTY
+
+PALS palsslah.png
+
+# Metasprites
+OPEN sslah.png
+
+LABEL sspl_lah
+METASPRITESET 0, 0, 2, 3, 3, 1, -4, -8 FLIPPED
+LABEL sspl_lah_ending
+METASPRITESET 6, 0, 2, 3, 3, 1, -4, -8
+LABEL ssen_lah
+METASPRITESET 0, 3, 2, 2, 8, 1, 0, 0 FLIPPED
+LABEL ssit_lah
+METASPRITESET 0, 5, 2, 2, 3, 1, 0, 0
+
+LABEL sspl_pppp
+METASPRITESET 0, 7, 2, 3, 3, 1, -4, 0 FLIPPED
+LABEL ssen_pppp
+METASPRITESET 0, 10, 2, 2, 8, 1, 0, 0 FLIPPED
+LABEL ssit_pppp
+METASPRITESET 0, 12, 2, 2, 3, 1, 0, 0

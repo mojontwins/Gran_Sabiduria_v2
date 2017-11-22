@@ -1,0 +1,27 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata2.h
+
+# Bits: 0 empty, 1 coco / bullet
+PALS palsshelmet.png
+OPEN bitshelmet.png
+CHARSET 0, 0, 14, 1
+
+# HELMET
+PALS palsshelmet.png
+OPEN sshelmetplayer.png
+LABEL sspl2
+METASPRITESET 0, 0, 2, 3, 6, 5, -4, -8
+
+# MALOS
+PALS palsshelmet.png
+OPEN sshelmetenems.png
+LABEL ssen2a
+METASPRITESET 0, 0, 2, 3, 8, 2, -4, -8 FLIPPED
+LABEL ssen2b
+METASPRITESET 0, 6, 2, 2, 7, 1, 0, 0
+
+# Late hour addenda to Commandow :)
+MAPFILE ..\dev\assets\spritedata3.h
+LABEL ssen2boss
+METASPRITESET 0, 8, 2, 3, 4, 1, 0, -8

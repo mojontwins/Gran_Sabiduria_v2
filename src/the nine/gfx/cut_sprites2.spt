@@ -1,0 +1,28 @@
+ASEPRITE
+NOSKIPEMPTY
+MAPFILE ..\dev\assets\spritedata2.h
+PALS paleta-sprites.png
+
+# Bits: 0 empty, 1 coco / bullet
+OPEN bullet.png
+CHARSET 0, 0, 2, 1
+
+# Sprites for Mega Meghan
+
+OPEN ssmeghan.png
+PALS palssmeghan.png
+LABEL spr_pl_meghan
+METASPRITESET 0, 0, 2, 3, 5, 4, -4, -8
+OPEN ssmeghannude.png
+LABEL spr_pl_meghan_nude
+METASPRITESET 0, 0, 2, 3, 5, 4, -4, -8
+OPEN ssmeghanenit.png
+LABEL spr_en_meghan
+METASPRITESET 0, 0, 2, 3, 8, 1, 0, -8 FLIPPED
+LABEL spr_it_meghan
+METASPRITESET 0, 3, 2, 2, 5, 1, 0, 0
+
+LABEL spr_ending_meghan
+SKIPEMPTY
+OPEN meghan_ending.png
+METASPRITE 0, 0, 5, 10, 1, 1, 0, 0

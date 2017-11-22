@@ -1,0 +1,31 @@
+MAPFILE ..\dev\assets\tiledata2.h
+
+OPEN font.png
+PALS palts.png
+CHARSET 0, 0, 32, 2
+
+# Vesta Vaal
+ASEPRITE
+OPEN vvts.png
+PALS vvpalts.png
+LABEL ts1
+MAPPED 0, 0, 2, 2, 8, 3, 20
+
+#OPEN QR.png
+#LABEL QR
+#MAPPED 0, 0, 2, 2, 8, 8
+
+#MAPFILE ..\dev\work\tiledata0.h
+#OPEN tbending.png
+#LABEL tbending
+#MAPPED 0, 0, 2, 2, 8, 4
+
+MAPFILE ..\dev\work\tiledata1.h
+
+OPEN vv_qr.png
+PALS vvpalts.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN tb_qr.png
+PALS tbpalts.png
+MAPPED 0, 0, 2, 2, 16, 15

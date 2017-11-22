@@ -1,0 +1,26 @@
+MAPFILE ..\dev\assets\tiledata.h
+
+PALS palts.png
+
+LABEL texts
+OPEN alltext.png
+TEXTS 0, 0, 23, 6
+
+LABEL ts_calavera
+OPEN ts.png
+MAPPED 0, 0, 2, 2, 16, 3
+
+MAPFILE ..\dev\work\tiledata_dummy.h
+OPEN title.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN hud.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN ending.png
+PALS paltsend.png
+MAPPED 0, 0, 2, 2, 16, 15
+
+OPEN zcp_qr.png
+PALS palts.png
+MAPPED 0, 0, 2, 2, 16, 15
