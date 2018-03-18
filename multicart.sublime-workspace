@@ -143,7 +143,7 @@
 			"file": "diario.md",
 			"settings":
 			{
-				"buffer_size": 162613,
+				"buffer_size": 164931,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -181,7 +181,7 @@
 	},
 	"expanded_folders":
 	[
-		"/D/git/Gran_Sabiduria_v2"
+		"/C/git/Gran_Sabiduria_v2"
 	],
 	"file_history":
 	[
@@ -316,7 +316,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -595,15 +595,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 162613,
+						"buffer_size": 164931,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								162612,
-								162612
+								164931,
+								164931
 							]
 						],
 						"settings":
@@ -612,10 +612,11 @@
 							"remote_loading": false,
 							"synced": false,
 							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 49517.0,
+						"translation.y": 53108.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

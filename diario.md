@@ -3374,3 +3374,46 @@ Adaptaciones:
 - [X] Memory Somari Text
 
 Y muchas más cosas que nunca apunté.
+
+
+20180318
+========
+
+Se rumorea una reedición, y si me dejan reenviar la ROM tendré que hacer cambios porque yo lo valgo (TM). Esto es lo que había (revisado)
+
+```
+PRG WHAT                                CHR WHAT                                CHR WHAT
+0   Menu                                0   Menu                                8 Jet Puri extra
+1   Monono / Jet Puri / Lah / PPPP      1   Monono / Jet Puri                   9 Cheril of the Bosque mapa 2 / Bits
+2   Bosque                              2   Bosque                              A Rendezvous extra
+3   Pantanow                            3   Pantanow                            B Lah / PPPP
+4   Sonic Mal                           4   Sonic Mal                           C Mega Meghan / ...
+5   The Nine                            5   The Nine                            D Viaje al centro de la Napia
+6   Tonterías                           6   Tonterías                           E Vesta Vaal / ...
+7   Leovigildo                          7   Leovigildo                          F Commandow
+```
+
+Quiero hacer el experimento de quitar Lala Lah y PPPP de PRG 1 y dejar sólo Monono, Jet Puri y Monona y ver cuanto ocupa. Pero hacerlo sobre MK2 latest, claro. Eso me liberaría también CHR B. 
+
+El glitch de Rendezvous me ocupa ¿todo? CHR A. ¿Como cuanto? Porque a lo mejor podría aprovecharlo para meter mapas custom... Vamos a repasar con nessc la ocupación.
+
+Estos son los bancos CHR con más espacio contiguo libre:
+
+```
+    CHR 6, Bank 0: A8 a FF, 87 patrones = 1382 bytes.
+    CHR 8, Bank 1: BB a FF, 69 patrones = 1104 bytes.
+    CHR 9, Bank 1: AF a FF, 81 patrones = 1296 bytes.
+    CHR A, Bank 0: A9 a FF, 87 patrones = 1382 bytes.
+    CHR E, Bank 0: 9D a FF, 98 patrones = 1568 bytes.
+    CHR E, Bank 1: 64 a FF, 155 patrones = 2480 bytes.
+```
+
+Se me ocurre empezar un nuevo proyecto donde
+
+1. Recrée cada ROM/CHR inciales solo con las cosas QUE ME GUSTAN y en la ultima versión de MK2 (D'Veel'Ng).
+2. Gráficos mejorados al máximo.
+3. Rellenar con cosas guays.
+
+Me gustaría antes terminar AGNES. Tengo que ser firme conmigo mismo y acabarme el TODO. Que no queda nada. Venga, va, en realidad solo tengo que terminar una fase de Cheril Perils y terminar de montar Sir Ababol para abandonarlo plácidamente.
+
+Cierro aquí. Abriré nuevo próximamente. Adiós, ha sido bonico.
